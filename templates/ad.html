@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    {{ header }}
+{% endblock %}
+
+{% block css %}
+    <link type="text/css" rel="stylesheet" href="{% static 'product.css' %}"  >
+{% endblock %}
+
+
+
+
+{% block content %}
+
+    <img src="{{ image}}">
+
+
+    {{ header }}
+    <p>{{ city}}</p>
+
+<br>
+{{ category }}
+<br>
+{{ price }}
+<br>
+{{ description }}
+
+    <form action="{% url "cart:cart_add" product_id=id %}" method="post">
+    {% csrf_token %}
+        {{ card_add }}
+    <button type="submit">Добавить в корзину</button>
+    </form>
+{% endblock %}

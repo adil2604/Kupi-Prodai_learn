@@ -1,0 +1,212 @@
+.seacrh-box{
+  height: 6em;
+  background: rgba(219, 215, 184,0.3);
+}
+.search{
+  margin-top: auto;
+  margin-bottom: 1em;
+  display: flex;
+  padding: 10px;
+  border-radius: 7px;
+  background: #fcba03;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+}
+#search-input{
+  margin-left: 1%;
+  width: 40%;
+  padding-left: 1.5em;
+  border-radius: 7px;
+  font-size: 150%;
+  background: url("icon_search.png");
+  background-repeat: no-repeat;
+  background-size: 1em;
+  background-color: white;
+  background-position: 1% 50%;
+}
+
+::placeholder{
+  font-size: 1.3vw;
+  display: block;
+
+}
+#search-cat{
+  margin-left: 20px;
+  width: 25%;
+  padding-left: 1.5em;
+  border-radius: 7px;
+  font-size: 150%;
+  background-image: url("https://cdn3.iconfinder.com/data/icons/flat-pro-basic-set-1-1/32/location-gray-512.png");
+  background-size: 0.8em;
+  background-color: white;
+  background-position: 2% 50%;
+  background-repeat: no-repeat;
+
+}
+
+
+#search-btn{
+  width: 14%;
+  background-color: #f0c654;
+  font-size: 1.2vw;
+  padding-left: 1em;
+  background-image: url("лупа.png");
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  background-position: 7% 50%;
+  margin-left: 1em;
+  border-radius: 0.3em;
+  border: 0;
+  cursor: pointer;
+}
+#search-icon{
+
+  max-width: 25px;
+  max-height: 25px;
+  width: auto;
+  height: auto;
+
+}
+.category-box{
+  width: 100%;
+  height: 250px;
+  background-color: rgba(219, 215, 184,0.3);
+
+}
+.category{
+  display: grid;
+  border-radius: 0.5em;
+  position: center;
+  width: 70%;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  background-position: center;
+  grid-template-columns: 1fr 1fr;
+
+}
+.category > div{
+  width: 50%;
+  padding: 5% 0 0 25%;
+  font-size:1.1vw;
+
+}
+.mobile-ctg{
+
+  background-image: url("icon_mobile.png");
+  background-position: 13% 30%;
+  background-repeat: no-repeat;
+  background-size: 3.3em;
+}
+.jellewry-ctg{
+  background-image: url("icon_jewellery.png");
+  background-size: 3.3em;
+  background-repeat: no-repeat;
+  background-position: 13% 30%;
+}
+.tv-ctg{
+  background-image: url("icon_tv.png");
+  background-size: 3.3em;
+  background-repeat: no-repeat;
+  background-position: 13% 30%;
+}
+.comp-ctg{
+  background-image: url("icon_pc.png");
+  background-size: 3.3em;
+  background-repeat: no-repeat;
+  background-position: 13% 30%;
+}
+.shoes-ctg{
+  background-image: url("icon_shoes.png");
+  background-size: 3.3em;
+  background-repeat: no-repeat;
+  background-position: 13% 30%;
+}
+.audio-ctg{
+  background-image: url("icon_audio.png");
+  background-size: 3.3em;
+  background-repeat: no-repeat;
+  background-position: 13% 30%;
+}
+
+.category > div:hover{
+  background-color: rgba(252, 186, 3,0.25);
+  border-radius: 0.3em;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.top{
+  width: 70%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.top-text{
+
+  margin-top: 2em;
+}
+.top-products{
+  width: 100%;
+  height: 500px;
+  display: grid;
+  grid-template-columns:repeat(5,20%);
+  grid-gap: 1em;
+}
+.product{
+
+  height: 19vw;
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 0.5em;
+
+
+}
+
+.product>img{
+
+  width: 12.3vw;
+  height: 12.3vw;
+  border-bottom: 1px solid silver;
+}
+
+.product> p{
+  width: 100%;
+  font-family: "Montserrat",'sans-serif';
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.2vw;
+
+
+}
+.price{
+  margin-left: 0.5em;
+  font-size: 1.1vw;
+  white-space: nowrap;
+}
+.buy >a{
+    background-color: silver;
+
+    border-radius: 0.3em;
+    font-size: 1.1vw;
+    margin-right: 0.3em;
+
+}
+.buy> a:hover{
+  background-color: rgba(222, 186, 32,0.6);
+
+
+}
+.buy{
+  background-color: rgba(227, 213, 150 ,0.5);
+
+  border-top: 1px solid silver;
+  border-radius: 0.2em;
+  display: flex;
+  padding-top: 0.5em;
+  justify-content: space-between;
+
+}

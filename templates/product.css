@@ -1,0 +1,10 @@
+img{
+    max-width: 20em;
+    max-height: 20em;
+    width: auto;
+    height: auto;
+
+}
+p{
+    background-color: grey;
+}

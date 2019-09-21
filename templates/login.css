@@ -1,0 +1,17 @@
+p,input{
+    display: inline;
+}
+.login > form> input{
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.login{
+    background-color: rgba(208, 210, 214,0.2);
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.3em;
+}

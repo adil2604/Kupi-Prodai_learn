@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Login
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="login">
+    <p>Login</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.username }}
+            {{ form.password }}
+            <input type="submit" value="Войти" >
+        </form>
+    <a href="{% url 'register' %}">Зарегистрироваться!</a>
+    </div>
+
+{% endblock %}
