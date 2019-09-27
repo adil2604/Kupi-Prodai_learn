@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% block css %}
+    <link  type="text/css" rel="stylesheet" href="{% static 'cart/detail.css' %}">
+{% endblock %}
 {% block title %}
     Your shopping cart
 {% endblock %}
@@ -22,7 +25,7 @@
                 <tr>
                     <td>
                         <a href="{{ product.get_absolute_url }}">
-                            <img src="
+                            <img class="image" src="
                                 {% if product.image %}
                                     {{ product.image.url }}
                                 {% else %}
@@ -30,18 +33,18 @@
                                 {% endif %}">
                         </a>
                     </td>
-                    <td>{{ product.name }}</td>
+                    <td>{{ product.header }}</td>
                     <td>{{ item.quantity }}</td>
                     <td><a href="{% url "cart:cart_remove" product.id%}">Remove</a></td>
-                    <td class="num">${{ item.price }}</td>
-                    <td class="num">${{ item.total_price }}</td>
+                    <td class="num">{{ item.price }}тг.</td>
+                    <td class="num">{{ item.total_price }}тг.</td>
                 </tr>
             {% endwith %}
         {% endfor %}
         <tr class="total">
             <td>Total</td>
             <td colspan="4"></td>
-            <td class="num">${{ cart.get_total_price }}</td>
+            <td class="num">{{ cart.get_total_price }}тг.</td>
         </tr>
         </tbody>
     </table>

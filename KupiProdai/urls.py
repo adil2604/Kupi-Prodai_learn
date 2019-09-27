@@ -28,5 +28,7 @@ urlpatterns = [
     path('cart/',include('cart.urls',namespace='cart')),
     path('login', views.login_view,name='login'),
     path('register',views.register_view,name='register'),
-    path('logout/',views.logout_view,name='logout')
-]
+    path('logout/',views.logout_view,name='logout'),
+    path('product_list/',views.product_list_view,name='product_list'),
+    path('product_add',views.product_add_view)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

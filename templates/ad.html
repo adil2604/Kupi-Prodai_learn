@@ -27,7 +27,12 @@
 <br>
 {{ description }}
 
-    <form action="{% url "cart:cart_add" product_id=id %}" method="post">
+    <form action=" {% if user.is_authenticated %}
+                        {% url "cart:cart_add" product_id=id %}
+                    {% else %}
+                        {% url 'login' %}
+                    {% endif %}
+" method="post">
     {% csrf_token %}
         {{ card_add }}
     <button type="submit">Добавить в корзину</button>

@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .forms import UserLoginForm, UserRegisterForm
+from .forms import UserLoginForm, UserRegisterForm,ProductAddForm
 from .models import Ad
 from django.contrib import auth
 from cart.forms import CartAddProductForm
@@ -10,8 +10,10 @@ def main_page(request):
     return render(request,'index.html',locals())
 def ad_detail(request,pk):
     ad=get_object_or_404(Ad,pk=pk)
+    print('templates/media'+ad.image.url)
     cart_add=CartAddProductForm()
     context={
+        'user': request.user,
         'id': ad.id,
         'image': ad.image.url,
         'city': ad.city,
@@ -72,3 +74,21 @@ def logout_view(request):
     return redirect('/')
 
 
+def product_list_view(request):
+    filter=request.GET.get('filter')
+    print(filter)
+    products=Ad.objects.filter(category=filter)
+    print(products)
+
+    return render(request,'product_list.html',{'products':products})
+
+def product_add_view(request):
+    form=ProductAddForm(request.POST or None)
+    if request.POST:
+
+        print(form)
+        if form.is_valid():
+            print(1)
+            form.save()
+            return HttpResponseRedirect('/')
+    return render(request,'Product_Ad.html',{'form':form})

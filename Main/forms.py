@@ -1,5 +1,6 @@
 
 from django import forms
+from .models import Ad
 from django.contrib.auth import (
     authenticate,
     get_user_model
@@ -52,3 +53,10 @@ class UserRegisterForm(forms.ModelForm):
             raise forms.ValidationError(
                 "This email has already been registered")
         return super(UserRegisterForm, self).clean(*args, **kwargs)
+
+
+class ProductAddForm(forms.ModelForm):
+    class Meta:
+
+        model=Ad
+        fields=['header','image','category','city','description','price']

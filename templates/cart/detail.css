@@ -1,0 +1,20 @@
+.cart{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.image{
+    max-width: 15em;
+    max-height: 15em;
+    width: auto;
+    height: auto;
+}
+table{
+    border: 1px solid red;
+    border-collapse: collapse;
+}
+td,tr{
+    border:1px solid red;
+    margin: 0;
+
+}

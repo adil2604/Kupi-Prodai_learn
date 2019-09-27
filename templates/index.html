@@ -15,12 +15,27 @@
       </div>
       <div class="category-box">
         <div class="category">
-          <div class="mobile-ctg">Мобильные/Смартфоны</div>
-          <div class="comp-ctg">Компьютеры/Ноутбуки</div>
-          <div class="jellewry-ctg">Украшения/Бижутерия</div>
-          <div class="shoes-ctg">Обувь</div>
-          <div class="tv-ctg">Телевизоры</div>
-          <div class="audio-ctg">Аудио/Видео</div>
+            <form action="{% url 'product_list' %}" method="get">
+                <div class="mobile-ctg">
+                    <input class="input" type="submit" name="filter" value="Мобильные/Смартфоны" >
+                </div>
+              <div class="comp-ctg">
+                  <input class="input" type="submit" name="filter" value="Компьютеры/Ноутбуки" >
+              </div>
+              <div class="jellewry-ctg">
+                  <input class="input" type="submit" name="filter" value="Украшения/Бижутерия" >
+              </div>
+              <div class="shoes-ctg">
+                  <input class="input" type="submit" name="filter" value="Обувь" >
+              </div>
+              <div class="tv-ctg">
+                  <input class="input" type="submit" name="filter" value="Телевизоры" >
+              </div>
+              <div class="audio-ctg">
+                  <input class="input" type="submit" name="filter" value="Аудио/Видео" >
+              </div>
+            </form>
+
       </div>
       </div>
 
@@ -28,54 +43,20 @@
           <p><label class="top-text">Популярные товары</label></p>
           <div class="top-products">
               {% for i in ads %}
-              <div class="product">
+                  <a href="{% url 'ad_detail' pk=i.pk %}">
+                <div class="product">
 
                   <img src="{{ i.image }}">
                   <p>{{ i.description }}<br></p>
                   <div class="buy">
                        <label class="price"><b>{{ i.price}}тг.</b></label>
-                        <a href="{% url 'ad_detail' pk=i.pk %}">Купить</a>
+
                   </div>
 
-              </div>
+                  </div>
+                  </a>
               {% endfor %}
-              <div class="product">
-                  <img src="https://wladnashop.com.ua/content/images/16/belye_krossovki_s_perforatsieyid-19649899668163.jpg">
-                  <p>Белые Adidas puma nike wildberris кроссковки<br></p>
-                  <div class="buy">
-                       <label class="price"><b>10 000тг.</b></label>
-                        <input type="submit" value="Купить">
-                  </div>
 
-              </div>
-              <div class="product">
-                  <img src="https://wladnashop.com.ua/content/images/16/belye_krossovki_s_perforatsieyid-19649899668163.jpg">
-                  <p>Белые Adidas puma nike wildberris кроссковки<br></p>
-                  <div class="buy">
-                       <label class="price"><b>10 000тг.</b></label>
-                        <input type="submit" value="Купить">
-                  </div>
-
-              </div>
-
-
-
-               <div class="product">
-                  <img src="https://wladnashop.com.ua/content/images/16/belye_krossovki_s_perforatsieyid-19649899668163.jpg">
-                  <p>Белые Adidas puma nike wildberris кроссковки<br></p>
-                  <div class="buy">
-                       <label class="price"><b>10 000тг.</b></label>
-                        <input type="submit" value="Купить">
-                  </div>
-               </div>
-              <div class="product">
-                  <img src="https://wladnashop.com.ua/content/images/16/belye_krossovki_s_perforatsieyid-19649899668163.jpg">
-                  <p>Белые Adidas puma nike wildberris кроссковки<br></p>
-                  <div class="buy">
-                      <label class="price"><b>10 000тг.</b></label>
-                        <input type="submit" value="Купить">
-                  </div>
-               </div>
           </div>
       </div>
   </div>

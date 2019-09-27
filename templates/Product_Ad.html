@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p>{{ form.header }}</p>
+    <p>{{ form.category }}</p>
+    <p>{{ form.city }}</p>
+    <p>{{ form.description }}</p>
+    <p>{{ form.price }}</p>
+    <input type="submit" value="Разместить">
+</form>
+
+</body>
+</html>
