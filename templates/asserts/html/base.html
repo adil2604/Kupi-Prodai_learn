@@ -1,0 +1,36 @@
+{% load  static %}
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% block css %}{% endblock %}
+        <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'asserts/css/base.css' %}">
+    </head>
+    <body >
+        <header>
+            <div class="header">
+                <a href="/new" class="logo-box"><img src="{% static 'asserts/imgs/logo.png' %}" class="logo" alt="logo">
+</a>
+                <form class="search-form" action="{% url 'product_list' %}" method="get">
+
+                    <input class="search" name="name" type="search" placeholder="Поиск . . .">
+                    <input type="submit" class="search-btn" value="Найти">
+                </form>
+                <button id="colopser" class="menu" onclick="barFunction(this)"></button>
+                <div id="menu-links" class="menu-links">
+                    <a class="cart" href="{% url 'cart:cart_detail' %}">Корзина</a>
+                    <a class="profile" href=""> Мой профиль</a>
+                </div>
+                <a class="cart" href="{% url 'cart:cart_detail' %}">Корзина</a>
+                <a class="profile" href="{% url 'login' %}">Мой профиль</a>
+
+            </div>
+        </header>
+        {% block content %}{% endblock %}
+
+    </body>
+</html>

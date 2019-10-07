@@ -1,0 +1,192 @@
+{% load  static %}
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'asserts/js/slick/slick-theme.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'asserts/js/slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'asserts/css/new.css' %}">
+</head>
+<body >
+    <header>
+        <div class="header">
+<a class="logo-box" href="/new"><img src="{% static 'asserts/imgs/logo.png' %}" class="logo" alt="logo">
+</a>            <form class="search-form" action="{% url 'product_list' %}" method="get">
+
+                <input class="search" name="name" type="search" placeholder="Поиск . . .">
+                <input type="submit" class="search-btn" value="Найти">
+            </form>
+            <button id="colopser" class="menu" onclick="barFunction(this)"></button>
+            <div id="menu-links" class="menu-links">
+                <a class="cart" href="{% url 'cart:cart_detail' %}">Корзина</a>
+                <a class="profile" href=""> Мой профиль</a>
+            </div>
+            <a class="cart" href="{% url 'cart:cart_detail' %}">Корзина</a>
+            <a class="profile" href="{% url 'login' %}">Мой профиль</a>
+
+        </div>
+    </header>
+
+    <section class="top-content">
+        <div class="top-content-box">
+            <div class="category-list">
+            <div class="category-name">
+                    Категории
+            </div>
+            <form action="{% url 'product_list' %}" class="form-ctg" method="get">
+                <div class="mobile">
+                    <input class="mobile-ctg" type="submit" name="category" value="Мобильные/Смартфоны" >
+                </div>
+              <div class="comp">
+                  <input class="pc-ctg" type="submit" name="category" value="Компьютеры/Ноутбуки" >
+              </div>
+              <div class="jellewry">
+                  <input class="jellewry-ctg" type="submit" name="category" value="Украшения/Бижутерия" >
+              </div>
+              <div class="shoes">
+                  <input class="shoes-ctg" type="submit" name="category" value="Обувь" >
+              </div>
+              <div class="tv">
+                  <input class="tv-ctg" type="submit" name="category" value="Телевизоры" >
+              </div>
+              <div class="audio">
+                  <input class="audio-ctg" type="submit" name="category" value="Аудио/Видео" >
+              </div>
+            </form>
+        </div>
+            <div class="content-box">
+                <div id="slider">
+
+                    <div id="slider-box">
+                        <div class="slides showing" ><img src="{% static 'asserts/imgs/img3.jpg' %}" alt=""></div>
+                        <div class="slides" ><img src="{% static 'asserts/imgs/img2.jpg' %}" alt=""></div>
+                    </div>
+
+
+                    <button id="btn-left" onclick="">&#10094;</button>
+                    <button id="btn-right" onclick="">&#10095;</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="top">Популярные товары</div>
+            <div class="top-products">
+                {% for product in products %}
+                    <a class="product-link" href=" {% url 'ad_detail' pk=product.pk %}">
+                        <div class="product">
+
+                            <div class="product-img"><img src="{{ product.image.url }}" alt=""></div>
+                            <div class="product-name"><p>{{ product.header }}</p></div>
+                            <div class="price">
+                                <form class="price-form" action="{% url 'cart:cart_add' product_id=product.id  %}" method="post">
+                                    {% csrf_token %}
+                                    {{ cart_add_form.quantity }}
+                                    <button class="cart-btn" type="submit">В корзину</button>
+                                </form>
+                                <div class="price-price">{{ product.price }} тг.</div>
+
+                            </div>
+                        </div>
+                    </a>
+
+                {% endfor %}
+
+
+            </div>
+    </section>
+    <div class="top after">
+        Электроника
+    </div>
+    <section class="after-content">
+                {% for product in notebooks_phones %}
+                    <a class="product-link" href=" {% url 'ad_detail' pk=product.pk %}">
+                        <div class="product">
+
+                            <div class="product-img"><img src="{{ product.image.url }}" alt=""></div>
+                            <div class="product-name"><p>{{ product.header }}</p></div>
+                            <div class="price">
+                                <form class="price-form" action="{% url 'cart:cart_add' product_id=product.id  %}" method="post">
+                                    {% csrf_token %}
+                                    {{ cart_add_form.quantity }}
+                                    <button class="cart-btn" type="submit">В корзину</button>
+                                </form>
+                                <div class="price-price">{{ product.price }} тг.</div>
+
+                            </div>
+                        </div>
+                    </a>
+
+                {% endfor %}
+
+
+
+
+
+    </section>
+
+    <div class="info">
+        <div class="info-box">
+            <div class="container">
+                <div class="icon">
+                    <img src="{% static 'asserts/imgs/1.png' %}">
+                    <p>100% безопасные платежи</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="icon">
+                    <img src="{% static 'asserts/imgs/2.png' %}">
+                    <p>100% возврат средств</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="icon">
+                    <img src="{% static 'asserts/imgs/3.png' %}">
+                    <p>24/7 онлайн-поддержка</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="icon">
+                    <img src="{% static 'asserts/imgs/4.png' %}">
+                    <p>Удобное мобильное приложение</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="footer">
+
+            <div class="payments">
+                <p>Варианты платежей</p>
+                <img class="payments-icon" src="{% static 'asserts/imgs/payments.png' %}">
+
+            </div>
+            <div class="subscribe">
+                <p>Подпишитесь на рассылку!</p>
+                <form class="email-form" action="" method="post">
+                    <input type="text" class="email" placeholder="Ваш e-mail...">
+                    <button class="email-btn" type="submit">Отправить!</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="contacts">
+                <div class="contact-numbers">Контактные номера:  321 334, +77751840677.</div>
+                <div class="contact-address">Контактный адрес: Алматинская область, Каскелен, Университет Сулеймана Демиреля.</div>
+                <div class="copyright">Copyright @2019, KupiProdai Private Limited, All rights Reserved</div>
+            </div>
+    </footer>
+    <script src="{% static 'asserts/js/slick/jquery.js' %}"></script>
+    <script src="{% static 'asserts/js/slick/slick.min.js' %}"></script>
+</body>
+   <script src="{% static 'asserts/js/scripts.js' %}">
+    </script>
+</html>

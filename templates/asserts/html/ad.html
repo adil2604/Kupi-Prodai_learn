@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'asserts/html/base.html' %}
 {% load staticfiles %}
 
 {% block title %}
@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block css %}
-    <link type="text/css" rel="stylesheet" href="{% static 'product.css' %}"  >
+    <link type="text/css" rel="stylesheet" href="{% static 'asserts/css/product.css' %}"  >
 {% endblock %}
 
 
@@ -26,6 +26,7 @@
 {{ price }}
 <br>
 {{ description }}
+    {{ views }}
 
     <form action=" {% if user.is_authenticated %}
                         {% url "cart:cart_add" product_id=id %}
@@ -34,7 +35,8 @@
                     {% endif %}
 " method="post">
     {% csrf_token %}
-        {{ card_add }}
+        {{ card_add.quantity  }}
+
     <button type="submit">Добавить в корзину</button>
     </form>
 {% endblock %}

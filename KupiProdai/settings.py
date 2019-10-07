@@ -124,6 +124,7 @@ USE_TZ = True
 MEDIA_ROOT=os.path.join(BASE_DIR,'templates','media')
 MEDIA_URL='/'
 
+
 print(MEDIA_ROOT)
 STATIC_URL = '/templates/'
 STATICFILES_DIRS = [

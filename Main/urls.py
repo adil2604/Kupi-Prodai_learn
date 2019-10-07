@@ -15,13 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from Main import views
+from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 
 
+
 urlpatterns = [
-    path('admin/',admin.site.urls),
-    path('',include('Main.urls')),
+    path('ad/<int:pk>/', views.ad_detail,name='ad_detail'),
+    path('cart/',include('cart.urls',namespace='cart')),
+    path('login', views.login_view,name='login'),
+    path('register',views.register_view,name='register'),
+    path('logout/',views.logout_view,name='logout'),
+    path('product_list/',views.product_list_view,name='product_list'),
+    path('product_add',views.product_add_view),
+    path('new',views.new_view),
+    path('',views.main_page)
 ]
 
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

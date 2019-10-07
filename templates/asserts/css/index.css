@@ -20,7 +20,7 @@
   padding-left: 1.5em;
   border-radius: 7px;
   font-size: 150%;
-  background: url("icon_search.png");
+  background: url("../imgs/icon_search.png");
   background-repeat: no-repeat;
   background-size: 1em;
   background-color: white;
@@ -52,7 +52,7 @@
   background-color: #f0c654;
   font-size: 1.2vw;
   padding-left: 1em;
-  background-image: url("лупа.png");
+  background-image: url("../imgs/лупа.png");
   background-size: 1em 1em;
   background-repeat: no-repeat;
   background-position: 7% 50%;
@@ -103,37 +103,37 @@ input[type="submit" i]{
 }
 .mobile-ctg{
 
-  background-image: url("icon_mobile.png");
+  background-image: url("../imgs/icon_mobile.png");
   background-position: 13% 30%;
   background-repeat: no-repeat;
   background-size: 3.3em;
 }
 .jellewry-ctg{
-  background-image: url("icon_jewellery.png");
+  background-image: url("../imgs/icon_jewellery.png");
   background-size: 3.3em;
   background-repeat: no-repeat;
   background-position: 13% 30%;
 }
 .tv-ctg{
-  background-image: url("icon_tv.png");
+  background-image: url("../imgs/icon_tv.png");
   background-size: 3.3em;
   background-repeat: no-repeat;
   background-position: 13% 30%;
 }
 .comp-ctg{
-  background-image: url("icon_pc.png");
+  background-image: url("../imgs/icon_pc.png");
   background-size: 3.3em;
   background-repeat: no-repeat;
   background-position: 13% 30%;
 }
 .shoes-ctg{
-  background-image: url("icon_shoes.png");
+  background-image: url("../imgs/icon_shoes.png");
   background-size: 3.3em;
   background-repeat: no-repeat;
   background-position: 13% 30%;
 }
 .audio-ctg{
-  background-image: url("icon_audio.png");
+  background-image: url("../imgs/icon_audio.png");
   background-size: 3.3em;
   background-repeat: no-repeat;
   background-position: 13% 30%;
